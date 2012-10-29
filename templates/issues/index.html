@@ -1,0 +1,22 @@
+{% extends 'layouts/default.html' %}
+{% block content %}
+<div class="issues content">
+	<h2>Issues</h2>
+	<table class="issues listing">
+		<thead>
+			<th></th>
+			<th>Summary</th>
+			<th>Type</th>
+			<th>Status</th>
+		</thead>
+		<tbody>
+		{% for issue in project.issues %}
+			<tr>
+				<td>{{ issue.issue_id }}</td>
+				<td>{{ issue.summary }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layouts/default.html' %}
+{% block content %}
+<div class="content">
+	<h2>Projects</h2>
+	<ul>
+	{% for project in projects %}
+		<li>
+			<h2><a href="{{ url_for('root') }}p/{{ project.slug }}">{{ project.name }}</a></h2>
+			<div class="info">
+				{{ project.info }}
+			</div>
+		</li>
+	{% endfor %}
+	</ul>
+</div>
+{% endblock %}
