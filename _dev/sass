@@ -1,0 +1,1 @@
+sass --watch _dev/css:public/assets/css --style compressed
