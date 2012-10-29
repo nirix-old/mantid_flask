@@ -19,7 +19,7 @@ along with Mantid. If not, see <http://www.gnu.org/licenses/>.
 from flask import Flask, render_template
 import routes
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="public", static_path="")
 
 @app.route('/')
 def root():
