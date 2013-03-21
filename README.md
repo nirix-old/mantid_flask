@@ -11,6 +11,11 @@ Requirements
 * SQLAlchemy
 * Flask
 
+    [sudo] pip install pyyaml
+    [sudo] pip install sqlalchemy
+    [sudo] pip install mysql-python
+    [sudo] pip install flask
+
 Setup
 ------------
 
