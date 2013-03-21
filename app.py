@@ -25,6 +25,10 @@ app = Flask(__name__, static_folder="public", static_path="")
 def root():
     return routes.Projects().index()
 
+@app.route('/register')
+def register():
+    return routes.Users().register()
+
 @app.route('/p/<project>')
 def project(project):
     return routes.Projects().view(project)
