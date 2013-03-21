@@ -8,6 +8,11 @@
 		<div id="wrapper">
 			<header id="header">
 				<h1>Mantid</h1>
+				<nav id="navbar">
+					<ul>
+						<li><a href="{{ url_for('root') }}register">Register</a></li>
+					</ul>
+				</nav>
 			</header>
 			<div id="page">
 				{% block content %}{% endblock %}
