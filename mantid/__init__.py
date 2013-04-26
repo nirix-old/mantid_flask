@@ -1,6 +1,6 @@
 """
 Mantid
-Copyright (C) 2012 Nirix
+Copyright (C) 2012-2013 Nirix
 https://github.com/nirix
 
 Mantid is free software: you can redistribute it and/or modify
@@ -16,10 +16,5 @@ You should have received a copy of the GNU General Public License
 along with Mantid. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from base import Base
-from db import session
-from models import Project
-
-class Users(Base):
-    def register(self):
-        return self.render('users/register')
+from flask import Flask
+app = Flask(__name__, static_folder="../public", static_path="", template_folder="templates")

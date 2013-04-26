@@ -1,6 +1,6 @@
 """
 Mantid
-Copyright (C) 2012 Nirix
+Copyright (C) 2012-2013 Nirix
 https://github.com/nirix
 
 Mantid is free software: you can redistribute it and/or modify
@@ -16,15 +16,7 @@ You should have received a copy of the GNU General Public License
 along with Mantid. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from base import Base
-from db import session
-from models import Project
+from mantid import app
+import mantid.urls
 
-class Projects(Base):
-    def index(self):
-        projects = session.query(Project).all()
-        return self.render('projects/index', projects=projects)
-
-    def view(self, slug):
-        project = session.query(Project).filter_by(slug=slug).first()
-        return self.render('projects/view', project=project)
+app.run(debug=True)

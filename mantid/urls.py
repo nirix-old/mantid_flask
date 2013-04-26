@@ -1,6 +1,6 @@
 """
 Mantid
-Copyright (C) 2012 Nirix
+Copyright (C) 2012-2013 Nirix
 https://github.com/nirix
 
 Mantid is free software: you can redistribute it and/or modify
@@ -16,10 +16,9 @@ You should have received a copy of the GNU General Public License
 along with Mantid. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from flask import Flask, render_template
-import routes
-
-app = Flask(__name__, static_folder="public", static_path="")
+from flask import render_template
+from mantid import app
+import mantid.routes as routes
 
 @app.route('/')
 def root():
@@ -40,6 +39,3 @@ def issues(project):
 @app.errorhandler(404)
 def not_found(error):
     return render_template('errors/404.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)

@@ -7,10 +7,11 @@
 	<body>
 		<div id="wrapper">
 			<header id="header">
-				<h1>Mantid</h1>
+				<h1><a href="{{ url_for('root') }}">Mantid</a></h1>
 				<nav id="navbar">
 					<ul>
 						<li><a href="{{ url_for('root') }}register">Register</a></li>
+						<li><a href="{{ url_for('root') }}login">Login</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -18,7 +19,7 @@
 				{% block content %}{% endblock %}
 			</div>
 			<footer id="footer">
-				Powered by Mantid, &copy; 2012 Nirix.net
+				Powered by Mantid, &copy; 2012-2013 Nirix.net
 			</footer>
 		</div>
 	</body>

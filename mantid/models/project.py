@@ -1,6 +1,6 @@
 """
 Mantid
-Copyright (C) 2012 Nirix
+Copyright (C) 2012-2013 Nirix
 https://github.com/nirix
 
 Mantid is free software: you can redistribute it and/or modify
@@ -16,20 +16,18 @@ You should have received a copy of the GNU General Public License
 along with Mantid. If not, see <http://www.gnu.org/licenses/>.
 """
 
-from db import Base
-from sqlalchemy import Column, Integer, String, Text, ForeignKey
+from mantid.db import Base
+from sqlalchemy import Column, Integer, String, Text
 from sqlalchemy.orm import relationship, backref
 
-class Issue(Base):
-    __tablename__ = 'issues'
+class Project(Base):
+    __tablename__ = 'projects'
 
     id = Column(Integer, primary_key=True)
-    issue_id = Column(Integer)
-    summary = Column(String(255))
+    name = Column(String(255))
+    slug = Column(String(255))
     info = Column(Text)
-    user_id = Column(Integer, ForeignKey('users.id'))
-    project_id = Column(Integer, ForeignKey('projects.id'))
-    user = relationship('User')
+    issues = relationship('Issue')
 
     def __init__(self, name, slug, info):
         self.name = name

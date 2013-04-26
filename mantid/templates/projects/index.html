@@ -1,11 +1,11 @@
 {% extends 'layouts/default.html' %}
 {% block content %}
 <div class="content">
-	<h2>Projects</h2>
-	<ul>
+	<h2 id="page-title">Projects</h2>
+	<ul id="projects">
 	{% for project in projects %}
-		<li>
-			<h2><a href="{{ url_for('root') }}p/{{ project.slug }}">{{ project.name }}</a></h2>
+		<li class="project">
+			<h3><a href="{{ url_for('root') }}p/{{ project.slug }}">{{ project.name }}</a></h3>
 			<div class="info">
 				{{ project.info }}
 			</div>
