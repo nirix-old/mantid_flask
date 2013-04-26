@@ -6,12 +6,17 @@
 	</head>
 	<body>
 		<div id="wrapper">
+			<div id="meta_nav">
+				<ul id="user_nav">
+					<li><a href="{{ url_for('root') }}register">Register</a></li>
+					<li><a href="{{ url_for('root') }}login">Login</a></li>
+				</ul>
+			</div>
 			<header id="header">
 				<h1><a href="{{ url_for('root') }}">Mantid</a></h1>
 				<nav id="navbar">
 					<ul>
-						<li><a href="{{ url_for('root') }}register">Register</a></li>
-						<li><a href="{{ url_for('root') }}login">Login</a></li>
+						<li><a href="{{ url_for('root') }}">Projects</a></li>
 					</ul>
 				</nav>
 			</header>
