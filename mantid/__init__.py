@@ -16,5 +16,20 @@ You should have received a copy of the GNU General Public License
 along with Mantid. If not, see <http://www.gnu.org/licenses/>.
 """
 
+import yaml
 from flask import Flask
 app = Flask(__name__, static_folder="../public", static_path="", template_folder="templates")
+
+# Attempt to load the settings file
+try:
+    conf_file = open('settings.yml')
+    conf = yaml.load(conf_file)
+    conf_file.close()
+except:
+    raise Exception('Error loading settings.yml')
+
+#app.config['db'] = conf['database']
+#app.config['port'] = conf['port']
+
+for (index, value) in conf.items():
+    app.config[index] = value
