@@ -19,4 +19,4 @@ along with Mantid. If not, see <http://www.gnu.org/licenses/>.
 from mantid import app
 import mantid.urls
 
-app.run(debug=True)
+app.run(port=app.config['port'], debug=app.config['debug'])
